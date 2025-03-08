@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Páginas</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Comunidades</a></li>
+                <li><a href="#">Ajuda</a></li>
+                <li><a href="#" class="cadastro-btn">Entrar</a></li>
+                <li><a href="#" class="cadastro-btn">Cadastrar</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+</body>
+</html>

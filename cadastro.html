@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Blog Plataforma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Blog Plataforma</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="comunidades.html">Comunidades</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="login.html">Entrar</a></li>
+                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Cadastro</h1>
+        <p>Preencha os campos abaixo para criar sua conta.</p>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            
+            <label for="interesses">Interesses (opcional):</label>
+            <select id="interesses" name="interesses">
+                <option value="">Selecione...</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="arte">Arte</option>
+                <option value="viagens">Viagens</option>
+                <option value="saude">Saúde</option>
+                <option value="outros">Outros</option>
+            </select>
+            
+            <label for="termos">
+                <input type="checkbox" id="termos" name="termos" required>
+                Aceito os Termos e Condições
+            </label>
+            
+            <button type="submit">Cadastrar</b
