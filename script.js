@@ -7,7 +7,7 @@ function acionarBotao() {
     } else if (textPassword == "") {
         alert("Preencha o campo senha!");
     } else {
-
+        
         if (textEmail == "admin@admin.com" && textPassword == "admin") {
             window.location.href = 'index.html';
         } else {
