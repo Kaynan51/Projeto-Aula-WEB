@@ -124,3 +124,8 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+a {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
