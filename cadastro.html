@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Blog Plataforma</title>
+    <title>Cadastro - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Blog Plataforma</div>
+            <div class="logo">Entre Páginas</div>
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -24,7 +24,7 @@
     <main>
         <h1>Cadastro</h1>
         <p>Preencha os campos abaixo para criar sua conta.</p>
-        <form>
+        <form onsubmit="event.preventDefault(); acionarCadastro();">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             
@@ -49,4 +49,8 @@
                 Aceito os Termos e Condições
             </label>
             
-            <button type="submit">Cadastrar</b
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>

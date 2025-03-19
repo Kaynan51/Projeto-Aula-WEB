@@ -1,27 +1,46 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("loginForm");
-    form.addEventListener("submit", function(event) {
-        // Captura os valores dos campos
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        let valid = true;
+function acionarBotao() {
+    var textEmail = document.getElementById('email').value;
+    var textPassword = document.getElementById('password').value;
 
-        // Validação de e-mail
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(email)) {
-            alert("Por favor, insira um e-mail válido.");
-            valid = false;
-        }
+    if (textEmail == "") {
+        alert("Preencha o campo e-mail!");
+    } else if (textPassword == "") {
+        alert("Preencha o campo senha!");
+    } else {
 
-        // Validação de senha
-        if (password.length < 6) {
-            alert("A senha deve ter pelo menos 6 caracteres.");
-            valid = false;
+        if (textEmail == "admin@admin.com" && textPassword == "admin") {
+            window.location.href = 'index.html';
+        } else {
+            alert("E-mail ou senha incorretos!");
         }
+    }
+}
+function acionarCadastro() {
+    var textNome = document.getElementById('nome').value;
+    var textEmail = document.getElementById('email').value;
+    var textSenha = document.getElementById('senha').value;
+    var textInteresses = document.getElementById('interesses').value;
+    var termos = document.getElementById('termos').checked;
 
-        // Se algum dos campos não for válido, impede o envio do formulário
-        if (!valid) {
-            event.preventDefault();
-        }
-    });
-});
+    if (textNome == "Admin" && textEmail == "admin@admin.com" && textSenha == "admin") {
+        window.location.href = 'login.html';
+    }
+  
+
+
+    if (textNome == "") {
+        alert("Preencha o campo nome!");
+    } else if (textEmail == "") {
+        alert("Preencha o campo e-mail!");
+    } else if (textSenha == "") {
+        alert("Preencha o campo senha!");
+    } else if (textSenha.length < 6) {
+        alert("A senha precisa ter pelo menos 6 caracteres!");
+    } else if (!termos) {
+        alert("Você precisa aceitar os termos e condições.");
+    } else {
+
+        alert("Cadastro realizado com sucesso!");
+        window.location.href = 'login.html';
+    }
+}
