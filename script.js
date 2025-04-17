@@ -9,8 +9,12 @@ function acionarBotao() {
         alert("Preencha o campo senha!");
     } else {
         if (textEmail == "admin@admin.com" && textPassword == "admin") {
+<<<<<<< HEAD
             localStorage.setItem("logado", "true");
             window.location.href = 'index.html';
+=======
+            window.location.href = 'index.html'; // Redireciona para a página inicial se for admin
+>>>>>>> de214840e443831d679005e09f8f586d09587aa6
         } else {
             alert("E-mail ou senha incorretos!");
         }
@@ -27,7 +31,11 @@ function acionarCadastro() {
     const confirmaSenha = document.getElementById("confirmaSenha").value;
 
     if (textNome == "Admin" && textEmail == "admin@admin.com" && textSenha == "admin") {
+<<<<<<< HEAD
         window.location.href = 'login.html';
+=======
+        window.location.href = 'login.html'; // Redireciona para o login caso o admin tente cadastrar
+>>>>>>> de214840e443831d679005e09f8f586d09587aa6
     }
 
     if (textNome == "") {
@@ -45,6 +53,7 @@ function acionarCadastro() {
         return;
     } else {
         alert("Cadastro realizado com sucesso!");
+<<<<<<< HEAD
         window.location.href = 'login.html';
     }
 }
@@ -53,10 +62,22 @@ function acionarCadastro() {
 function acionarRecuperacao() {
     var textEmail = document.getElementById('email').value;
 
+=======
+        window.location.href = 'login.html'; // Redireciona para o login após cadastro
+    }
+}
+
+// Função para a página "Esqueci a Senha"
+function acionarRecuperacao() {
+    var textEmail = document.getElementById('email').value;
+
+    // Verifica se o e-mail é o admin
+>>>>>>> de214840e443831d679005e09f8f586d09587aa6
     if (textEmail == "admin@admin.com") {
         window.location.href = "login.html";
     } else {
         alert("Instruções de recuperação de senha enviadas para " + textEmail);
+<<<<<<< HEAD
         window.location.href = "login.html";
     }
 }
@@ -218,3 +239,8 @@ const btnLocalizacao = document.getElementById("obterTemperaturaLocalBtn");
 if (btnLocalizacao) {
     btnLocalizacao.addEventListener("click", mostrarTemperaturaAutomaticamente);
 }
+=======
+        window.location.href = "login.html"; // Simula o envio e redireciona para login
+    }
+}
+>>>>>>> de214840e443831d679005e09f8f586d09587aa6

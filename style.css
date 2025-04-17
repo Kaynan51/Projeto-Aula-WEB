@@ -167,3 +167,8 @@ input[type="text"], input[type="email"], input[type="password"], select {
         font-size: 0.9em;
     }
 }
+
+a {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
