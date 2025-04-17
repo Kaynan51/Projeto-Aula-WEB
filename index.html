@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,12 +18,23 @@
                 <li><a href="ajuda.html">Ajuda</a></li>
                 <li><a href="login.html">Entrar</a></li>
                 <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+                <li></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <h1>Bem-vindo ao Blog Entre Páginas</h1>
         <p>Explore conteúdos e participe da nossa comunidade!</p>
+        
+        
+        
+
+        <!-- Exibição da temperatura -->
+        <p id="temperatura">Aguardando temperatura...</p>
+
+        <!-- Botão para obter a temperatura pela geolocalização -->
+        <button id="obterTemperaturaLocalBtn">Temperatura</button>
     </main>
 </body>
 </html>

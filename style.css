@@ -39,11 +39,11 @@ body {
 }
 
 .nav-links a:hover {
-    color: #007BFF;
+    color: #9900ff;
 }
 
 .cadastro-btn {
-    background-color: #007BFF;
+    background-color: #9900ff;
     color: white;
     padding: 8px 12px;
     border-radius: 5px;
@@ -67,31 +67,35 @@ body {
         padding: 10px;
         border-radius: 5px;
     }
+
     .nav-links.active {
         display: flex;
     }
+
     .menu-toggle {
         display: block;
     }
 }
 
 main {
-    max-width: 800px;
+    max-width: 600px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 30px;
     background: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 h1 {
     font-size: 2em;
-    color: #007BFF;
+    color: #9900ff;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 form {
@@ -100,27 +104,66 @@ form {
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: bold;
 }
 
-input {
+input,
+select {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
 }
 
 button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #007BFF;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #9900ff;
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1f002b;
+}
+
+a {
+    color: #9900ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+form p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    main {
+        padding: 20px;
+    }
+
+    form input, form select {
+        font-size: 0.9em;
+    }
 }
