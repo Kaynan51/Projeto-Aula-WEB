@@ -3,34 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Blog Plataforma</title>
+    <title>Login - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo">Blog Plataforma</div>
-            <ul class="nav-links">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidades.html">Comunidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
             </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
+
     <main>
         <h1>Login</h1>
-        <form onsubmit="event.preventDefault(); acionarBotao();">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+        <form id="loginForm" onsubmit="event.preventDefault(); acionarBotao();">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" required>
+
             <button type="submit">Entrar</button>
+
+            <p class="form-link">Ainda não possui uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <p class="form-link"><a href="recuperacao-senha.html">Esqueci minha senha</a></p>
+            <p id="errorMessage" class="error-message"></p>
         </form>
-        <p><a href="esqueci-a-senha.html" class="esqueci-senha">Esqueci minha senha</a></p>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>

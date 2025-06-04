@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Entre Páginas</title>
+    <link rel="stylesheet" href="style.css">
+    <script>protegerPagina();</script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Sair</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Configurações do Perfil</h1>
+
+        <section class="profile-settings">
+            <h2>Dados do Perfil</h2>
+            <form id="profileSettingsForm" onsubmit="event.preventDefault(); salvarConfiguracoesPerfil();">
+                <label for="profileName">Nome de Usuário:</label>
+                <input type="text" id="profileName" value="Nome do Usuário" required>
+
+                <label for="profileEmail">Email:</label>
+                <input type="email" id="profileEmail" value="usuario@exemplo.com" readonly>
+                
+                <label for="profileBio">Bio:</label>
+                <textarea id="profileBio" rows="4" placeholder="Fale um pouco sobre você..."></textarea>
+
+                <label for="profilePicture">Foto de Perfil:</label>
+                <div class="profile-picture-upload">
+                    <img id="currentProfilePic" src="https://via.placeholder.com/100" alt="Foto de Perfil Atual" class="profile-pic-preview">
+                    <input type="file" id="profilePicture" accept="image/*">
+                    <p class="small-text">Clique para mudar a foto (apenas simulação).</p>
+                </div>
+                
+                <button type="submit">Salvar Alterações do Perfil</button>
+            </form>
+        </section>
+
+        <section class="cookie-settings" id="cookieSettings">
+            <h2>Preferências de Cookies</h2>
+            <p>Gerencie como usamos os cookies em nosso site.</p>
+            <form id="cookieConsentForm" onsubmit="event.preventDefault(); salvarPreferenciasCookies();">
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="essentialCookies" checked disabled> Cookies Essenciais (obrigatórios)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="analyticsCookies"> Cookies de Análise (para melhorar o site)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="marketingCookies"> Cookies de Marketing (para ofertas personalizadas)
+                    </label>
+                </div>
+                <button type="submit">Salvar Preferências de Cookies</button>
+                <button type="button" onclick="window.location.href='#'">Ver Política de Cookies Completa</button>
+            </form>
+        </section>
+
+        <p id="settingsMessage" class="info-message"></p>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

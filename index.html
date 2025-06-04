@@ -3,38 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entre Páginas</title>
+    <title>Entre Páginas - Blog e Comunidade Criativa</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
             <div class="logo">Entre Páginas</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidade.html">Comunidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
-                <li></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
             </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
 
     <main>
-        <h1>Bem-vindo ao Blog Entre Páginas</h1>
-        <p>Explore conteúdos e participe da nossa comunidade!</p>
-        
-        
-        
+        <section class="hero">
+            <h1>Bem-vindo ao Entre Páginas</h1>
+            <p>Explore conteúdos inspiradores e participe da nossa comunidade criativa!</p>
+            <a href="cadastro.html" class="cta-button">Cadastre-se para publicar!</a>
+        </section>
 
-        <!-- Exibição da temperatura -->
-        <p id="temperatura">Aguardando temperatura...</p>
+        <section class="categories">
+            <h2>Explore por Categoria</h2>
+            <div class="category-grid">
+                <a href="#" class="category-item">Tecnologia</a>
+                <a href="#" class="category-item">Saúde</a>
+                <a href="#" class="category-item">Viagens</a>
+                <a href="#" class="category-item">Estilo de Vida</a>
+                <a href="#" class="category-item">Arte</a>
+                <a href="#" class="category-item">Literatura</a>
+                <a href="#" class="category-item">Música</a>
+                <a href="#" class="category-item">Sustentabilidade</a>
+            </div>
+        </section>
 
-        <!-- Botão para obter a temperatura pela geolocalização -->
-        <button id="obterTemperaturaLocalBtn">Temperatura</button>
+        <section class="recent-posts">
+            <h2>Publicações Recentes</h2>
+            <ul id="recentPostsList">
+                </ul>
+        </section>
+
+        <section class="cookie-policy">
+            <h2>Política de Cookies</h2>
+            <p>Este site utiliza cookies para melhorar sua experiência. Você pode gerenciar suas preferências.</p>
+            <button onclick="window.location.href='configuracoes.html#cookies'">Gerenciar Cookies</button>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>

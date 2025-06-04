@@ -1,30 +1,88 @@
+/* Reset básico */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf6f0; /* Creme pastel */
     color: #333;
+    line-height: 1.6;
 }
 
+/* Container principal para centralizar o conteúdo */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: #b39ddb; /* Lilás pastel */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Links em geral */
+a {
+    color: #f48fb1; /* Rosa pastel */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d81b60; /* Rosa mais escuro */
+}
+
+/* --- Navbar --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 15px 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #b39ddb; /* Lilás pastel */
+    padding: 15px 30px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-right: 20px; /* Espaço entre logo e links */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 .nav-links li {
@@ -33,142 +91,516 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    font-size: 1em;
-    transition: color 0.3s;
+    color: white;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
 }
 
 .nav-links a:hover {
-    color: #9900ff;
+    color: #ffe082; /* Amarelo pastel claro */
+    border-bottom: 2px solid #ffe082;
 }
 
-.cadastro-btn {
-    background-color: #9900ff;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-
+/* Botão de menu responsivo (hambúrguer) */
 .menu-toggle {
-    display: none;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: white;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
-
-main {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-h1 {
+    display: none; /* Escondido por padrão em telas grandes */
     font-size: 2em;
-    color: #9900ff;
-    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+    order: 1; /* Garante que fique no canto direito quando visível */
 }
 
-p {
+/* --- Botões e CTA --- */
+button, .cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #a5d6a7; /* Verde pastel */
+    color: white;
+    border: none;
+    border-radius: 8px;
     font-size: 1.1em;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    text-decoration: none;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+button:hover, .cta-button:hover {
+    background-color: #81c784; /* Verde mais escuro */
+    transform: translateY(-2px);
 }
 
-label {
-    margin-top: 15px;
+.cta-button {
+    margin-top: 25px;
     font-weight: bold;
 }
 
-input,
-select {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: inherit;
+.small-cta {
+    padding: 8px 15px;
+    font-size: 0.95em;
+    margin-top: 15px;
 }
 
-input[readonly] {
-    background-color: #e9ecef;
-    cursor: not-allowed;
+/* --- Hero Section (Página Inicial) --- */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #e0f2f7; /* Azul claro pastel */
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
-button {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #9900ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.hero h1 {
+    color: #4a148c; /* Roxo escuro para contraste */
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #1f002b;
+.hero p {
+    font-size: 1.3em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
 }
 
-a {
-    color: #9900ff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-form p {
-    margin-top: 20px;
+/* --- Seções de Categoria (Página Inicial) --- */
+.categories {
+    margin-top: 40px;
     text-align: center;
 }
 
-input[type="text"], input[type="email"], input[type="password"], select {
-    width: 100%;
-}
-
-@media (max-width: 500px) {
-    main {
-        padding: 20px;
-    }
-
-    form input, form select {
-        font-size: 0.9em;
-    }
-}
-
-a {
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
     margin-top: 20px;
-    font-family: Arial, sans-serif;
+}
+
+.category-item {
+    background-color: #ffccbc; /* Salmão pastel */
+    color: white;
+    padding: 15px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-item:hover {
+    background-color: #ff8a65; /* Salmão mais escuro */
+    transform: translateY(-3px);
+}
+
+/* --- Formulários (Login, Cadastro, Recuperação, Nova Publicação) --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #90caf9; /* Azul pastel ao focar */
+    box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.3);
+    outline: none;
+}
+
+form input[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    border-color: #e0e0e0;
+}
+
+textarea {
+    resize: vertical; /* Permite redimensionamento vertical */
+    min-height: 80px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-width: 18px; /* Evita que o checkbox diminua muito */
+    min-height: 18px;
+}
+
+.form-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.error-message {
+    color: #e57373; /* Vermelho pastel */
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.info-message {
+    color: #64b5f6; /* Azul pastel */
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* --- Listas de Conteúdo (Painel, Comunidade, Blog) --- */
+ul#lista-publicacoes, ul#lista-comunidade, ul#recentPostsList, ul#blogPostsList, ul#commentsList {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul#lista-publicacoes li, ul#lista-comunidade li, ul#recentPostsList li, ul#blogPostsList li {
+    background-color: #fff8e1; /* Amarelo clarinho pastel */
+    border: 1px solid #ffe082; /* Borda amarelo pastel */
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative; /* Para o overlay do link */
+}
+
+ul#lista-publicacoes li h3, ul#lista-comunidade li h3, ul#recentPostsList li h3, ul#blogPostsList li h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #4a148c; /* Roxo escuro */
+}
+
+ul#lista-publicacoes li p, ul#lista-comunidade li p, ul#recentPostsList li p, ul#blogPostsList li p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço necessário */
+}
+
+ul#lista-publicacoes li small, ul#lista-comunidade li small, ul#recentPostsList li small, ul#blogPostsList li small {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Botões dentro das listas */
+ul#lista-publicacoes li button {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: #90caf9; /* Azul pastel */
+}
+
+ul#lista-publicacoes li button:last-child {
+    margin-right: 0;
+}
+
+ul#lista-publicacoes li button.delete-button {
+    background-color: #ef9a9a; /* Vermelho pastel para excluir */
+}
+
+ul#lista-publicacoes li button.delete-button:hover {
+    background-color: #e57373; /* Vermelho mais escuro */
+}
+
+/* Overlay de link para posts nas listas (permite clicar em qualquer lugar do item) */
+.post-item-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Garante que o link esteja acima do conteúdo */
+    /* background-color: rgba(0,0,0,0.01); /* Apenas para visualização de área clicável */
+}
+
+.post-item-link-overlay:hover {
+    cursor: pointer;
+}
+
+/* --- Publicação Detalhada (`publicacao.html`) --- */
+.post-meta {
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+.comments-section {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#commentsList li {
+    background-color: #f0f4c3; /* Verde/amarelo pastel */
+    border: 1px solid #dce775;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
+}
+
+#commentsList li small {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: #888;
+}
+
+/* --- Configurações do Perfil --- */
+.profile-settings, .cookie-settings {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.profile-picture-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.profile-pic-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #b39ddb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-picture-upload input[type="file"] {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    font-size: 0.9em;
+    color: #f48fb1;
+}
+
+.profile-picture-upload input[type="file"]::file-selector-button {
+    display: none; /* Esconde o botão padrão do navegador */
+}
+
+.profile-picture-upload p.small-text {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: -5px;
+}
+
+.cookie-settings .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- FAQ Section --- */
+.faq-item {
+    background-color: #e3f2fd; /* Azul muito claro pastel */
+    border: 1px solid #bbdefb;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    color: #64b5f6; /* Azul pastel */
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #b39ddb; /* Lilás pastel */
+    color: white;
+    border-top: 1px solid #ddd;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 0.9em;
+    transition: text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none; /* Escondido por padrão no mobile */
+        flex-direction: column;
+        width: 100%;
+        background-color: #b39ddb;
+        position: absolute;
+        top: 60px; /* Ajuste para ficar abaixo da navbar */
+        left: 0;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 1000; /* Garante que o menu sobreponha outros elementos */
+    }
+
+    .nav-links.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada via JS */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o ícone de hambúrguer */
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    button, .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input, form select, form textarea {
+        font-size: 0.9em;
+        padding: 10px;
+    }
 }

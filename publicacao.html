@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade - Entre Páginas</title>
+    <title id="pageTitle">Publicação - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
@@ -27,20 +27,20 @@
     </header>
 
     <main>
-        <h1>Comunidade</h1>
-        <p>Participe de discussões, encontre colaboradores e explore ideias!</p>
+        <h1 id="titulo-publicacao">Título da Publicação</h1>
+        <p class="post-meta">Por: <span id="autor-publicacao"></span> em <span id="data-publicacao"></span></p>
+        <div id="conteudo-publicacao" class="post-content">
+            </div>
 
-        <section class="community-feed">
-            <h2>Últimas Publicações da Comunidade</h2>
-            <ul id="lista-comunidade">
+        <section class="comments-section">
+            <h2>Comentários</h2>
+            <ul id="commentsList">
                 </ul>
-            <p id="noCommunityPostsMessage" class="info-message" style="display: none;">Ainda não há publicações na comunidade. Seja o primeiro a criar uma!</p>
+            <form id="commentForm">
+                <textarea id="commentContent" rows="3" placeholder="Deixe seu comentário..." required></textarea>
+                <button type="submit">Comentar</button>
+            </form>
         </section>
-
-        <section class="community-groups">
-            <h2>Comunidades por Interesse</h2>
-            <p>Em breve: Grupos dedicados a temas específicos, com discussões e desafios criativos.</p>
-            </section>
     </main>
 
     <footer>

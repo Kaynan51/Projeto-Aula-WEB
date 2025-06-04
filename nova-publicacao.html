@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Entre Páginas</title>
+    <title>Nova Publicação - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
+    <script>protegerPagina();</script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,35 +21,39 @@
                 <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
                 <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
                 <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
-                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
+                <li><a href="login.html" id="authLink">Sair</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
 
     <main>
-        <h1>Cadastro</h1>
-        <form id="cadastroForm" onsubmit="event.preventDefault(); acionarCadastro();">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
+        <h1>Criar Nova Publicação</h1>
+        <form id="newPostForm" onsubmit="event.preventDefault(); criarPublicacao();">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" rows="10" required placeholder="Escreva seu artigo, história ou ideia aqui..."></textarea>
 
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" required>
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="">Selecione uma categoria</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="saude">Saúde</option>
+                <option value="viagens">Viagens</option>
+                <option value="estilo-de-vida">Estilo de Vida</option>
+                <option value="arte">Arte</option>
+                <option value="literatura">Literatura</option>
+                <option value="musica">Música</option>
+                <option value="sustentabilidade">Sustentabilidade</option>
+                <option value="outros">Outros</option>
+            </select>
 
-            <label for="confirmaSenha">Confirmar Senha:</label>
-            <input type="password" id="confirmaSenha" required>
-
-            <label class="checkbox-label">
-                <input type="checkbox" id="termos" required> Aceito os termos de uso e política de privacidade
-            </label>
-
-            <button type="submit">Cadastrar</button>
-
-            <p class="form-link">Já possui uma conta? <a href="login.html">Conecte-se</a></p>
-            <p id="errorMessage" class="error-message"></p>
+            <label for="tags">Tags (separadas por vírgula):</label>
+            <input type="text" id="tags" placeholder="ex: javascript, front-end, tutorial">
+            
+            <button type="submit">Publicar</button>
         </form>
     </main>
 

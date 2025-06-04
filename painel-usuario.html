@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade - Entre Páginas</title>
+    <title>Painel do Usuário - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
+    <script>protegerPagina();</script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,26 +21,27 @@
                 <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
                 <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
                 <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
-                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
+                <li><a href="login.html" id="authLink">Sair</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
 
     <main>
-        <h1>Comunidade</h1>
-        <p>Participe de discussões, encontre colaboradores e explore ideias!</p>
+        <h1>Meu Painel</h1>
+        <p>Bem-vindo(a), <span id="userName">Usuário</span>! Aqui estão suas publicações.</p>
+        <a href="nova-publicacao.html" class="cta-button small-cta">Criar Nova Publicação</a>
 
-        <section class="community-feed">
-            <h2>Últimas Publicações da Comunidade</h2>
-            <ul id="lista-comunidade">
+        <section class="user-posts">
+            <h2>Minhas Publicações</h2>
+            <ul id="lista-publicacoes">
                 </ul>
-            <p id="noCommunityPostsMessage" class="info-message" style="display: none;">Ainda não há publicações na comunidade. Seja o primeiro a criar uma!</p>
+            <p id="noPostsMessage" class="info-message" style="display: none;">Você ainda não tem publicações. Que tal criar uma?</p>
         </section>
 
-        <section class="community-groups">
-            <h2>Comunidades por Interesse</h2>
-            <p>Em breve: Grupos dedicados a temas específicos, com discussões e desafios criativos.</p>
+        <section class="ideas-feed">
+            <h2>Feed de Ideias</h2>
+            <p>Em breve: Espaço para publicar e colaborar em ideias e projetos!</p>
             </section>
     </main>
 

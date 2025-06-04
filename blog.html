@@ -3,26 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Blog Entre Páginas</title>
+    <title>Blog - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo">Blog Entre Páginas</div>
-            <ul class="nav-links">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidades.html">Comunidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
             </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
+
     <main>
         <h1>Blog</h1>
-        <p>Confira os últimos artigos e novidades da comunidade.</p>
+        <p>Confira os últimos artigos, histórias e novidades publicadas pela nossa comunidade.</p>
+        <section class="blog-posts">
+            <h2>Destaques</h2>
+            <ul id="blogPostsList">
+                <li>
+                    <h3>Primeiros Passos na Programação Web</h3>
+                    <p>Um guia para iniciantes no mundo do HTML, CSS e JavaScript.</p>
+                    <small>Por: DevJr</small>
+                    <a href="publicacao.html?id=exemplo1">Ler mais</a>
+                </li>
+                 <li>
+                    <h3>Os Benefícios da Meditação para a Saúde Mental</h3>
+                    <p>Descubra como a meditação pode transformar seu dia a dia.</p>
+                    <small>Por: BemEstar Agora</small>
+                    <a href="publicacao.html?id=exemplo2">Ler mais</a>
+                </li>
+            </ul>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>

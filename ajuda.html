@@ -3,26 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajuda - Blog Entre Páginas</title>
+    <title>Ajuda - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo">Blog Entre Páginas</div>
-            <ul class="nav-links">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidades.html">Comunidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
             </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
+
     <main>
         <h1>Ajuda</h1>
-        <p>Encontre respostas para suas dúvidas e suporte para sua experiência no blog.</p>
+        <p>Encontre respostas para suas dúvidas e suporte para sua experiência no blog. Aqui estão algumas perguntas frequentes:</p>
+
+        <section class="faq">
+            <h2>Perguntas Frequentes (FAQ)</h2>
+            <div class="faq-item">
+                <h3>Como faço para criar uma conta?</h3>
+                <p>Clique em "Cadastre-se" na barra de navegação superior e preencha o formulário.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Como posso publicar um novo artigo?</h3>
+                <p>Após fazer login, acesse seu "Painel" e clique em "Nova Publicação".</p>
+            </div>
+            <div class="faq-item">
+                <h3>Posso editar minhas publicações?</h3>
+                <p>Sim! No seu "Painel", você encontrará suas publicações e poderá editá-las ou excluí-las.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Como entro em contato com o suporte?</h3>
+                <p>Você pode nos enviar um e-mail para <a href="mailto:suporte@entrepaginas.com">suporte@entrepaginas.com</a>.</p>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -3,40 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - Entre Páginas</title>
     <link rel="stylesheet" href="style.css">
-    <title>Esqueci a Senha - Blog Plataforma</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
         <nav class="navbar">
-            <div class="logo">Blog Plataforma</div>
-            <ul class="nav-links">
+            <div class="logo">Entre Páginas</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="comunidades.html">Comunidades</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
                 <li><a href="ajuda.html">Ajuda</a></li>
-                <li><a href="login.html">Entrar</a></li>
-                <li><a href="cadastro.html" class="cadastro-btn">Cadastrar</a></li>
+                <li class="logged-in-only"><a href="painel-usuario.html">Painel</a></li>
+                <li class="logged-in-only"><a href="nova-publicacao.html">Nova Publicação</a></li>
+                <li class="logged-in-only"><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="login.html" id="authLink">Entrar/Cadastrar</a></li>
             </ul>
+            <div class="menu-toggle" id="menuToggle">&#9776;</div>
         </nav>
     </header>
 
     <main>
-        <h1>Esqueci a Senha</h1>
-        <p>Digite seu e-mail abaixo para receber as instruções para redefinir sua senha.</p>
-        
-        <form onsubmit="event.preventDefault(); acionarRecuperacao();">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            <button type="submit">Enviar Instruções</button>
-        </form>
+        <h1>Recuperar Senha</h1>
+        <form id="recoverPasswordForm" onsubmit="event.preventDefault(); acionarRecuperacaoSenha();">
+            <p>Informe seu e-mail para receber as instruções de recuperação de senha.</p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <button type="submit">Enviar Link de Recuperação</button>
 
-        <p>Já lembrou sua senha? <a href="login.html">Voltar para o login</a></p>
+            <p class="form-link">Lembrou da senha? <a href="login.html">Voltar para o Login</a></p>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
     </main>
 
     <footer>
-        <p>&copy; 2025 Blog Plataforma. Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Entre Páginas - Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="#">Políticas de Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
     </footer>
 
 </body>
